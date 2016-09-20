@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% import '_macro.html' as inp %}
+
+{% block content %}
+    {% block header %}
+{% set links=[
+    ('Home', url_for('.index')),
+    ('About', url_for('.about')),
+    ('Service', url_for('.service')),
+    ('Project', url_for('.project'))
+] %}
+<nav>
+    {% for label,href in links %}
+        {% if not loop.first %} | {% endif %}
+        {% if link is current_link %}
+            <a href="#">{{ label }}</a>
+        {% else %}
+            <a href="{{ href }}">{{ label }}</a>
+        {% endif %}
+    {% endfor %}
+</nav>
+{% endblock %}
+    {{ inp.input('username') }}
+    {{ inp.input('password',type='password') }}
+{% endblock %}
