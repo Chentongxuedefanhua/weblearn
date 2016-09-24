@@ -1,2 +1,1 @@
 SECRET_KEY = 'this is a secret key'
-SQLALCHEMY_DATABASE_URL = 'mysql://root:123456@localhost:3306/web'
