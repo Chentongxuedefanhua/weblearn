@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block head %}
+    {{ super() }}
+{% endblock head %}
+
+
+{% block content %}
+    {{ super() }}
+<div class="container" style="padding: 10px; ">
+  <br>
+  <table id="table" data-toggle="true" data-show-columns="true" data-pagination="true" data-height="500">
+    <thead>
+      <tr>
+          <th data-field="name" data-sortable="true">Repo</th>
+          <th data-field="commits" data-sortable="true" >commits</th>
+          <th data-field="attention" data-sortable="true">attention</th>
+          <th data-field="uneven" data-sortable="true">uneven</th>
+          <th data-field="uneven" data-sortable="true">uneven</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+{% endblock %}
+{% block scripts %}
+
+    <script type='text/javascript' src='static/tables/jquery-2.1.0.js'></script>
+    <script type="text/javascript" src="static/tables/bootstrap.mini.js"></script>
+    <script type='text/javascript' src="static/tables/bootstrap-table.js"></script>
+    <script type='text/javascript'>//<![CDATA[
+        $(window).load(function(){
+            var data = {{data|tojson}};
+        $(function() {
+            $('#table').bootstrapTable({
+                data: data
+                });
+            });
+        });
+    </script>
+{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="static/tables/bootstrap-table.css">
+    <style type='text/css'>
+        .row-index {
+            width: 50px;
+            display: inline-block;
+        }
+    </style>
+{% endblock %}
+  
+
+
+  
+
+

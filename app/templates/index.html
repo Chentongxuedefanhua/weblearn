@@ -4,10 +4,10 @@
 {% block content %}
     {% block header %}
 {% set links=[
-    ('Home', url_for('.index')),
-    ('About', url_for('.about')),
-    ('Service', url_for('.service')),
-    ('Project', url_for('.project'))
+    ('Home', url_for('main.index')),
+    ('About', url_for('main.about')),
+    ('Service', url_for('main.service')),
+    ('Project', url_for('main.project'))
 ] %}
 <nav>
     {% for label,href in links %}

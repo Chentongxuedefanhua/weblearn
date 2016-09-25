@@ -7,11 +7,15 @@
 @author: chenfan
 """
 from flask_script import Manager
-#from app import create_app
-from test import create_app
+from app import create_app
+from app.model_base import db
+from flask_migrate import Migrate, MigrateCommand,upgrade
+from app.models import Role,User
+
 app = create_app()
 manager = Manager(app)
-
+migrate = Migrate(app, db)
+manager.add_command('db', MigrateCommand)
 @manager.command
 def dev():
     from livereload import Server
@@ -22,6 +26,11 @@ def dev():
 @manager.command
 def test():
     pass
+
+@manager.command
+def deploy():
+    pass
+
 
 if __name__ == '__main__':
     manager.run()
