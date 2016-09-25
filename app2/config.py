@@ -1,0 +1,1 @@
+SQLALCHEMY_DATABASE_URI = "mysql://root:Zbj123456!@172.26.16.37:3306/web"
