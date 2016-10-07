@@ -1,6 +1,6 @@
 #coding: utf-8
-from app import login_manager
-from app.model_base import db
+
+from app.model_base import db, login_manager
 from flask_login import UserMixin
 
 

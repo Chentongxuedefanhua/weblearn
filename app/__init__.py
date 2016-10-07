@@ -9,14 +9,14 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_nav import Nav
 from flask_nav.elements import *
-from app.model_base import db
+from app.model_base import db, login_manager
 from app.auth.forms import LoginFrom
-from flask_login import LoginManager
+
 
 
 bootstrap = Bootstrap()
 nav = Nav()
-login_manager = LoginManager()
+
 login_manager.session_protection='strong'
 login_manager.login_view = 'auth.login'
 
