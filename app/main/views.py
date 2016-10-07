@@ -1,7 +1,7 @@
 #coding:utf-8
 
 from flask import render_template,request
-from . import main
+from app import main
 
 @main.route('/')
 def index():

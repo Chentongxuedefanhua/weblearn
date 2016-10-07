@@ -27,9 +27,12 @@ def dev():
 def test():
     pass
 
+
+
 @manager.command
 def deploy():
-    pass
+    upgrade()
+    Role.seed()
 
 
 if __name__ == '__main__':
